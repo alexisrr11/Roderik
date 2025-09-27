@@ -5,7 +5,7 @@
     "nombre": "Picada Roderick",
     "descripcion": "Tabla con fiambres, quesos, aceitunas y papas bravas.",
     "precio": 4500,
-    "imagen": "https://cdn0.recetasgratis.net/es/posts/3/7/1/picada_argentina_61713_orig.jpg"
+    "imagen": "https://i.pinimg.com/736x/31/63/90/316390ba9d41287d883df5f04036ef97--argentina-recipes-argentina-food.jpg"
   },
   {
     "id": "Comidas",
@@ -13,7 +13,7 @@
     "nombre": "Hamburguesa Doble Cheddar",
     "descripcion": "Doble carne, queso cheddar, panceta y salsa especial.",
     "precio": 3200,
-    "imagen": "https://assets.elgourmet.com/wp-content/uploads/2023/03/hamburguesa_doble_cheddar_con_bacon_y_cebolla_caramelizada_11322_600.jpg"
+    "imagen": "https://as1.ftcdn.net/v2/jpg/03/32/26/04/1000_F_332260441_52Hh521gohslBPJuEwalWFmLCCStkt6f.jpg"
   },
   {
     "id": "Comidas",
@@ -29,7 +29,7 @@
     "nombre": "Pizzeta Margarita",
     "descripcion": "Pizzeta individual con salsa de tomate, mozzarella y albahaca.",
     "precio": 2100,
-    "imagen": "https://www.lavanguardia.com/files/image_948_465/uploads/2019/10/03/5fa534392bb02.jpeg"
+    "imagen": "https://cdn.colombia.com/gastronomia/2011/08/25/pizza-margarita-3684.jpg"
   },
   {
     "id": "Comidas",
@@ -37,6 +37,6 @@
     "nombre": "Sándwich de Bondiola",
     "descripcion": "Bondiola braseada con barbacoa en pan casero.",
     "precio": 2800,
-    "imagen": "https://www.clarin.com/img/2022/09/30/bondiola-de-cerdo-en-sandwich___iGdZ7tIuW_2000x1500__1.jpg"
+    "imagen": "https://www.brauercerveceria.com.ar/wp-content/uploads/sandwich-de-bondiola.jpg"
   }
 ]
