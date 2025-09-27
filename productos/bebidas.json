@@ -1,0 +1,37 @@
+[
+    {
+    "id": "Bebidas",
+    "categoria": "Cervezas",
+    "nombre": "Cerveza Rubia Artesanal",
+    "precio": 1300,
+    "imagen": "https://cdn.diffords.com/contrib/stock-images/2021/11/61962fa52ebc0.jpg"
+  },
+  {
+    "id": "Bebidas",
+    "categoria": "Cervezas",
+    "nombre": "Cerveza Roja Artesanal",
+    "precio": 1400,
+    "imagen": "https://www.beerwulf.com/globalassets/beerwulf/beers/redale.jpg"
+  },
+  {
+    "id": "Bebidas",
+    "categoria": "Tragos",
+    "nombre": "Gin Tonic",
+    "precio": 2200,
+    "imagen": "https://www.cucinare.tv/wp-content/uploads/2020/06/Gin-Tonic.jpg"
+  },
+  {
+    "id": "Bebidas",
+    "categoria": "Sin alcohol",
+    "nombre": "Gaseosa Cola 500ml",
+    "precio": 1000,
+    "imagen": "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/3080105_f.jpg"
+  },
+  {
+    "id": "Bebidas",
+    "categoria": "Aguas",
+    "nombre": "Agua Mineral 500ml",
+    "precio": 900,
+    "imagen": "https://images.tcdn.com.br/img/img_prod/858764/agua_crystal_500ml_c_12_125_1_a26927dc99c2653019b71f1ee44e98be.jpg"
+  }
+]

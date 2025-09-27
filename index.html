@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cervecería Roderick</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+  <script type="module" src="/index.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body id="inicio" class="font-sans text-gray-100 bg-gray-900">
+
+  <!-- Header -->
+  <header class="bg-gray-800 shadow-md fixed top-0 left-0 w-full z-20">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-yellow-500">Cervecería Roderick</h1>
+      <div class="relative flex gap-5">
+        <button id="boton-menu" class="text-3xl border-2 border-gray-400 rounded-full"><i
+            class='p-1 bx bx-menu'></i></button>
+        <nav id="list-menu"
+          class="hidden absolute top-[58px] right-[-24px] flex flex-col justify-around gap-5 p-10 h-80 rounded-lg bg-gray-700/90 underline">
+          <li><a href="#inicio" class="hover:text-yellow-400">Inicio</a></li>
+          <li><a href="#productos" class="hover:text-yellow-400">Comidas<br>Bebidas</a></li>
+          <li><a href="#ofertas-section" class="hover:text-yellow-400">Ofertas del día</a></li>
+          <li><a href="#contactos" class="hover:text-yellow-400">Ubicación<br>Contactos</a></li>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section
+    class="flex-grow h-[70vh] bg-[url('https://www.thestartupfounder.com/wp-content/uploads/2023/11/230621133646-01-legal-drinking-age-top.jpg')] bg-cover bg-center pt-24">
+    <div class="max-w-7xl mx-auto px-6 py-20 text-center bg-black/60 mt-[-35px] h-screen rounded-xl">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-yellow-400">Bienvenido a Cervecería Roderick</h2>
+      <p class="text-gray-200 mb-8">Disfruta de nuestras cervezas artesanales, hechas con pasión y calidad.</p>
+      <button id="openModal" class="bg-yellow-500 text-gray-900 px-6 py-3 rounded-lg hover:bg-yellow-600 transition">
+        🔥 Promos 🔥
+      </button>
+    </div>
+  </section>
+
+  <!-- Modal -->
+    <div id="ofertasModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl shadow-lg w-11/12 md:w-2/3 lg:w-1/2 relative overflow-hidden">
+
+            <!-- Botón cerrar -->
+            <button id="closeModal"
+                class="absolute top-3 right-3 text-gray-600 hover:text-gray-900 text-2xl font-bold z-20">&times;</button>
+
+            <!-- Slider -->
+            <div class="relative w-full overflow-hidden">
+                <div id="slider" class="flex transition-transform duration-500">
+
+                    <!-- Oferta 1 -->
+                    <div class="min-w-full flex flex-col items-center justify-center p-6">
+                        <img src="https://genovesapizza.cl/wp-content/uploads/2018/10/2gran_bebida-480x480.jpg"
+                            alt="Oferta 1" class="rounded-xl shadow-lg w-72 h-72 object-cover">
+                        <h2 class="text-xl font-semibold mt-4">2 Pizzas + 1 coca-cola</h2>
+                        <p class="text-gray-600 line-through">Antes: $19.000</p>
+                        <p class="text-red-600 font-bold text-lg">Hoy: $15.000</p>
+                    </div>
+
+                    <!-- Oferta 2 -->
+                    <div class="min-w-full flex flex-col items-center justify-center p-6">
+                        <img src="https://images.happycow.net/venues/1024/20/10/hcmp201069_884323.jpeg" alt="Oferta 2"
+                            class="rounded-xl shadow-lg w-72 h-72 object-cover">
+                        <h2 class="text-xl font-semibold mt-4">4 Empanadas + 1 Cerveza</h2>
+                        <p class="text-gray-600 line-through">Antes: $8.000</p>
+                        <p class="text-red-600 font-bold text-lg">Hoy: $6.500</p>
+                    </div>
+
+                    <!-- Oferta 3 -->
+                    <div class="min-w-full flex flex-col items-center justify-center p-6">
+                        <img src="https://nanucpatagonia.com/images/nanuc-box-.png" alt="Oferta 3"
+                            class="rounded-xl shadow-lg w-72 h-72 object-cover">
+                        <h2 class="text-xl font-semibold mt-4">Media docena Medialunas</h2>
+                        <p class="text-gray-600 line-through">Antes: $6000</p>
+                        <p class="text-red-600 font-bold text-lg">Hoy: $4.000</p>
+                    </div>
+                </div>
+
+                <!-- Controles -->
+                <div class="absolute inset-0 flex items-center justify-between px-4">
+                    <button id="prev"
+                        class="bg-gray-800 bg-opacity-50 text-white rounded-full p-3 hover:bg-opacity-80">❮</button>
+                    <button id="next"
+                        class="bg-gray-800 bg-opacity-50 text-white rounded-full p-3 hover:bg-opacity-80">❯</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <!-- MODAL -->
+  <div id="modal-ofertas" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center px-8 z-50">
+    <div class="bg-white rounded-2xl shadow-lg max-w-md w-full p-6 relative">
+      <button onclick="closeModal()" class="absolute top-3 right-3 text-gray-500 hover:text-red-600 text-xl">
+        &times;
+      </button>
+      <!-- CONTENIDO DEL MODAL -->
+      <h2 class="text-2xl font-bold text-center text-red-600 mb-4">🔥 Ofertas del Día 🔥</h2>
+      <ul id="lista-ofertas" class="space-y-3 text-gray-700">
+        <!-- Aquí se renderizan ofertas dinámicamente -->
+      </ul>
+    </div>
+  </div>
+
+  <!-- Productos -->
+  <main id="productos" class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-bold text-yellow-500 mb-8">Menú Roderick</h2>
+
+    <!-- Filtros principales -->
+    <div class="flex flex-wrap gap-4 mb-6" id="filtros-principales"></div>
+
+    <!-- Select de categorías -->
+    <div class="mb-8">
+      <label for="filtro-categorias" class="text-white font-semibold mr-4">Categorías:</label>
+      <select id="filtro-categorias" class="bg-gray-800 text-white px-4 py-2 rounded-lg">
+        <!-- Opciones dinámicas -->
+      </select>
+    </div>
+
+    <!-- Contenedor dinámico -->
+    <div id="productos-container"></div>
+  </main>
+
+  <!-- SECCIÓN DE OFERTAS -->
+  <section id="ofertas-section" class="max-w-6xl mb-16 m-auto px-6 py-10">
+    <h3 id="titulo-ofertas" class="text-3xl font-bold text-center mb-10 text-yellow-500">
+      Ofertas del Día
+    </h3>
+
+    <div id="contenedor-ofertas" class="grid md:gap-8 px-6">
+      <!-- Aquí se renderizan ofertas dinámicamente -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contactos" class="bg-gray-800 text-gray-200 pt-6">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 pb-8">
+
+      <!-- Branding -->
+      <div>
+        <p class="text-gray-400 text-sm">
+          Tu lugar de cervezas artesanales. Calidad y sabor en cada sorbo.
+        </p>
+      </div>
+
+      <!-- Redes sociales -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Seguinos</h3>
+        <div class="flex gap-4 text-2xl">
+          <a href="#" class="hover:text-blue-400"><i class='bx bxl-facebook'></i></a>
+          <a href="#" class="hover:text-pink-400"><i class='bx bxl-instagram'></i></a>
+          <a href="#" class="hover:text-blue-300"><i class='bx bxl-linkedin'></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mapa -->
+    <div class="w-full h-80 px-6 pb-8">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1638.968587163183!2d-58.40408306305184!3d-34.75717539786599!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd2919c1bd6dd%3A0x954451b14c593905!2sB1832%20Lomas%20de%20Zamora%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1758939553149!5m2!1ses!2sar"
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade" class="rounded-xl shadow-lg">
+      </iframe>
+    </div>
+
+    <!-- Copyright -->
+    <div class="bg-gray-900 py-4 text-center text-gray-500 text-sm">
+      <p>&copy; 2025 Cervecería Roderick. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/5491234567890?text=%C2%A1Hola!%20Estoy%20interesado%20en%20sus%20cervezas"
+    class="fixed bottom-4 right-4 z-50 text-3xl">
+    <i class='text-white bg-green-600 p-2 rounded-full bx bxl-whatsapp'></i>
+  </a>
+
+  <script>
+    //Close
+    function closeModal() {
+      document.getElementById("modal-ofertas").classList.add("hidden");
+    }
+  </script>
+</body>
+
+</html>
