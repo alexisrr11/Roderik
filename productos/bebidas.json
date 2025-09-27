@@ -4,28 +4,28 @@
     "categoria": "Cervezas",
     "nombre": "Cerveza Rubia Artesanal",
     "precio": 1300,
-    "imagen": "https://cdn.diffords.com/contrib/stock-images/2021/11/61962fa52ebc0.jpg"
+    "imagen": "https://malteadoclub.com/wp-content/uploads/2024/06/cerveza-rubia.jpeg"
   },
   {
     "id": "Bebidas",
     "categoria": "Cervezas",
     "nombre": "Cerveza Roja Artesanal",
     "precio": 1400,
-    "imagen": "https://www.beerwulf.com/globalassets/beerwulf/beers/redale.jpg"
+    "imagen": "https://www.todoenunclick.com/wp-content/uploads/2014/06/VASO-RED-LAGER.jpg"
   },
   {
     "id": "Bebidas",
     "categoria": "Tragos",
     "nombre": "Gin Tonic",
     "precio": 2200,
-    "imagen": "https://www.cucinare.tv/wp-content/uploads/2020/06/Gin-Tonic.jpg"
+    "imagen": "http://www.greenpink.org/wp-content/uploads/2016/07/gin-tonic-aromatico-la-ricetta.jpg"
   },
   {
     "id": "Bebidas",
     "categoria": "Sin alcohol",
     "nombre": "Gaseosa Cola 500ml",
     "precio": 1000,
-    "imagen": "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/3080105_f.jpg"
+    "imagen": "https://duranalmacen.com.ar/wp-content/uploads/2021/09/Gaseosa-Coca-Cola-500-Cc-COCA-COLA-X500ML-1-3024.jpg"
   },
   {
     "id": "Bebidas",
