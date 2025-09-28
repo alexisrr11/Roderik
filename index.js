@@ -144,7 +144,6 @@ window.onload = function () {
     const listaOfertas = document.getElementById("lista-ofertas");
     const contenedor = document.getElementById("contenedor-ofertas");
     const titulo = document.getElementById("titulo-ofertas");
-    const btnConsultaWp = document.getElementById("botonConsultaWhatsapp");
 
     // Array de ofertas por día - Cervecería Roderick
     const ofertasPorDia = {
@@ -193,7 +192,6 @@ window.onload = function () {
             const li = document.createElement("li");
             li.textContent = "No tenemos ofertas especiales para hoy, vuelva mañana. Lo esperamos😊";
             listaOfertas.appendChild(li);
-            btnConsultaWp.classList.add("hidden");
         }
 
         // Mostrar modal automáticamente
