@@ -14,11 +14,11 @@ let filtroCategoriaSeleccionada = "Todos";
 async function cargarProductos() {
     try {
         // Cargar comidas
-        const resComida = await fetch("./productos/comida.json");
+        const resComida = await fetch("/productos/comida.json");
         todasComidas = await resComida.json();
 
         // Cargar bebidas
-        const resBebida = await fetch("./productos/bebidas.json");
+        const resBebida = await fetch("/productos/bebidas.json");
         todasBebidas = await resBebida.json();
 
         // Crear botones para IDs
@@ -107,31 +107,32 @@ function renderizar() {
 
 function renderSeccion(titulo, items, container) {
     const section = document.createElement("section");
-    section.className = "mt-12";
-
-    section.innerHTML = `
-      <h3 class="text-2xl font-semibold text-white mb-4">${titulo}</h3>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
-    `;
-
+    section.className = "mt-12"; section.innerHTML =
+        ` <h3 class="text-2xl font-semibold text-white mb-4">
+    ${titulo}
+    </h3>
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+     </div> `;
     const grid = section.querySelector("div");
-
-    items.forEach(item => {
-        grid.innerHTML += `
-        <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
-          <img src="${item.imagen}" alt="${item.nombre}" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h4 class="text-xl font-bold text-yellow-400">${item.nombre}</h4>
-            ${item.descripcion
-                ? `<p class="text-gray-300 text-sm mb-2">${item.descripcion}</p>`
-                : ""
-            }
+    items.forEach((item) => {
+        grid.innerHTML +=
+            ` <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-105 transition">
+          <img src="${item.imagen}" 
+          alt="${item.nombre}"
+           class="w-full h-48 object-cover cursor-pointer"
+            data-nombre="${item.nombre}"
+             data-imagen="${item.imagen}">
+              <div class="p-4">
+               <h4 class="text-xl font-bold text-yellow-400">
+               ${item.nombre}
+               </h4>
+                ${item.descripcion ?
+                `<p class="text-gray-300 text-sm mb-2">
+            ${item.descripcion}
+            </p>` : ""} 
             <p class="text-gray-200 font-semibold">$${item.precio}</p>
-          </div>
-        </div>
-      `;
+             </div> </div> `;
     });
-
     container.appendChild(section);
 }
 
@@ -262,5 +263,26 @@ prevBtn.addEventListener("click", () => {
     if (index > 0) index--;
     else index = 2;
     slider.style.transform = `translateX(-${index * 100}%)`;
+});
 
+//Lógica del modal de imágenes
+const modalImgContainer = document.getElementById("modalImgContainer");
+const modalImgSrc = document.getElementById("modalImgSrc");
+const modalImgTitulo = document.getElementById("modalImgTitulo")
+    ; const cerrarModalImg = document.getElementById("cerrarModalImg");
+// Abrir modal al hacer clic en imagen 
+document.addEventListener("click", (e) => {
+    if (e.target.tagName === "IMG" && e.target.dataset.imagen) {
+        modalImgSrc.src = e.target.dataset.imagen;
+        modalImgTitulo.textContent = e.target.dataset.nombre;
+        modalImgContainer.classList.remove("hidden");
+    }
+});
+// Cerrar modal 
+cerrarModalImg.addEventListener("click", () => {
+    modalImgContainer.classList.add("hidden");
+});
+// Cerrar modal haciendo clic fuera de la imagen 
+modalImgContainer.addEventListener("click", (e) => {
+    if (e.target === modalImgContainer) { modalImgContainer.classList.add("hidden"); }
 });
