@@ -14,11 +14,11 @@ let filtroCategoriaSeleccionada = "Todos";
 async function cargarProductos() {
     try {
         // Cargar comidas
-        const resComida = await fetch("/productos/comida.json");
+        const resComida = await fetch("./productos/comida.json");
         todasComidas = await resComida.json();
 
         // Cargar bebidas
-        const resBebida = await fetch("/productos/bebidas.json");
+        const resBebida = await fetch("./productos/bebidas.json");
         todasBebidas = await resBebida.json();
 
         // Crear botones para IDs
