@@ -18,7 +18,7 @@
     "categoria": "Tragos",
     "nombre": "Gin Tonic",
     "precio": 2200,
-    "imagen": "http://www.greenpink.org/wp-content/uploads/2016/07/gin-tonic-aromatico-la-ricetta.jpg"
+    "imagen": "https://thaiseng.com/wp-content/uploads/2021/09/896a1808794b3158b766667b54e47147.jpg"
   },
   {
     "id": "Bebidas",
@@ -35,3 +35,4 @@
     "imagen": "https://images.tcdn.com.br/img/img_prod/858764/agua_crystal_500ml_c_12_125_1_a26927dc99c2653019b71f1ee44e98be.jpg"
   }
 ]
+
